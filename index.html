@@ -4,133 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kowshik Portfolio</title>
+    <title>Kowshik | Frontend Developer Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G3XFHKG9X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9G3XFHKG9X');
+    </script>
+
+    <meta name="description" content="Kowshik - Frontend Developer skilled in HTML, CSS, JavaScript, React, and Python. Explore my projects and portfolio.">
+    <meta name="keywords" content="Kowshik, Frontend Developer, Web Developer, React Developer, Portfolio, JavaScript, Python">
 </head>
 
 <body>
-
-    <div class="background"></div>
-
+    <!-- LOADER -->
+    <div id="loader">
+        <h1>Loading...</h1>
+    </div>
+    <div id="progress-bar"></div>
     <header>
         <nav>
+
             <h2>Kowshik</h2>
-            <ul>
+
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <button id="theme-toggle">🌙</button>
+            <ul id="menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#hire">Why Me</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- HERO -->
-    <section id="home" class="hero">
-        <div>
-            <h1>Hello, I'm <span>Kowshik</span></h1>
-            <h2><span id="typing"></span></h2>
+    <section id="home" class="hero reveal">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Kowshik</span></h1>
+            <h2 id="typing"></h2>
 
-            <p>I build modern websites and solve real-world problems using code.</p>
+            <p>Frontend Developer building modern and responsive web apps.</p>
 
-            <a href="resume.pdf" target="_blank" class="btn">
-                <i class="fas fa-eye"></i> View Resume
-            </a>
+            <div class="hero-buttons">
+                <a href="kowshik Resume.pdf" target="_blank" class="btn">Resume</a>
+                <a href="https://expense-tracker-kowshik.netlify.app/" target="_blank" class="btn outline">Project</a>
+            </div>
 
             <div class="socials">
-                <a href="https://github.com/kowshik63600/https-food-waste-management" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-
-                <a href="https://linkedin.com/in/kowshik-m-b165383a7" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+                <a href="https://github.com/kowshik63600"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/kowshik-m-b165383a7"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
 
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-        <h2>Services</h2>
-        <div class="grid">
-            <div class="card">🌐 Web Development</div>
-            <div class="card">🎨 UI Design</div>
-            <div class="card">🧠 Problem Solving</div>
+        <div class="hero-img">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
         </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
-        <h2>Projects</h2>
+    <section id="projects" class="hero reveal">
+        <div class="container">
+            <h2>Projects</h2>
 
-        <div class="projects-grid">
+            <div class="projects-grid">
 
-            <!-- Food Project -->
-            <div class="project-card">
-                <div class="project-img">
+                <div class="project-card" data-title="Expense Tracker" data-desc="React app with Firebase authentication and charts." data-link="https://expense-tracker-kowshik.netlify.app/">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c">
+                    <div class="project-content">
+                        <h3>Expense Tracker</h3>
+                        <p>React app with Firebase authentication and charts.</p>
+                        <div class="tech">
+                            <span>React</span><span>Firebase</span><span>JS</span>
+                        </div>
+                        <a href="https://expense-tracker-kowshik.netlify.app/" target="_blank" class="btn small">Live</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-title="Food Waste System" data-desc="Python system connecting donors." data-link="https://github.com/kowshik63600">
                     <img src="https://www.getknowapp.com/blog/wp-content/uploads/2023/04/Food-Waste-Management-jpg.webp">
-                </div>
-
-                <div class="project-overlay">
-                    <h3>Food Waste Management</h3>
-                    <p>Python system to reduce food waste by connecting donors and receivers.</p>
-
-                    <div class="tech">
-                        <span>Python</span>
+                    <div class="project-content">
+                        <h3>Food Waste System</h3>
+                        <p>Python system connecting donors.</p>
+                        <div class="tech"><span>Python</span></div>
+                        <a href="https://github.com/kowshik63600" target="_blank" class="btn small">GitHub</a>
                     </div>
-
-                    <a href="https://github.com/kowshik63600/https-food-waste-management" target="_blank" class="btn small">GitHub</a>
                 </div>
+
             </div>
-
-            <!-- Portfolio Project -->
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="protofolio image.png">
-                </div>
-
-                <div class="project-overlay">
-                    <h3>Portfolio Website</h3>
-                    <p>Responsive personal portfolio website using modern UI design.</p>
-
-                    <div class="tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a href="#" class="btn small">GitHub</a>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="grid">
-            <div class="card">HTML</div>
-            <div class="card">CSS</div>
-            <div class="card">JavaScript</div>
-            <div class="card">Python</div>
-        </div>
-    </section>
-
-    <!-- WHY HIRE ME -->
-    <section id="hire">
-        <h2>Why Hire Me</h2>
-        <div class="grid">
-            <div class="card">⚡ Quick Learner</div>
-            <div class="card">🧠 Problem Solver</div>
-            <div class="card">🚀 Passionate Developer</div>
+    <section id="skills" class="hero reveal">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="projects-grid">
+                <div class="card">HTML</div>
+                <div class="card">CSS</div>
+                <div class="card">JavaScript</div>
+                <div class="card">Python</div>
+            </div>
         </div>
     </section>
 
@@ -138,22 +123,32 @@
     <section id="contact">
         <h2>Contact</h2>
 
-        <form class="contact-form">
+        <form class="contact-form" class="hero reveal">
             <input type="text" placeholder="Name">
             <input type="email" placeholder="Email">
             <textarea placeholder="Message"></textarea>
-            <button class="btn">Send</button>
+            <button type="submit">Send</button>
         </form>
     </section>
 
     <footer>
-        <p>© 2026 Kowshik Email us for more queries</p>
-        <p>
-            📧 <a href="mailto:kowshik70223@gmail.com" target="_blank">kowshik70223@gmail.com</a>
-        </p>
+        <p>© 2026 Kowshik</p>
+        <a href="mailto:kowshik70223@gmail.com" target="_blank">kowshik70223@gmail.com</a>
     </footer>
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <a id="modal-link" target="_blank" class="btn">View Project</a>
+        </div>
+    </div>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
