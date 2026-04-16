@@ -14,7 +14,6 @@ function type() {
     let word = texts[i];
 
     element.textContent = word.substring(0, j);
-
     if (!isDeleting) j++;
     else j--;
 
@@ -132,36 +131,48 @@ window.onclick = (e) => {
         modal.style.display = "none";
     }
 };
-// CURSOR MOVE
 const cursor = document.querySelector(".cursor");
 const dot = document.querySelector(".cursor-dot");
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+if (cursor && dot) {
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
 
-    dot.style.left = e.clientX + "px";
-    dot.style.top = e.clientY + "px";
-});
-document.querySelectorAll("a, button, .project-card").forEach(el => {
-    el.addEventListener("mouseenter", () => {
-        cursor.style.transform = "translate(-50%, -50%) scale(1.5)";
+        dot.style.left = e.clientX + "px";
+        dot.style.top = e.clientY + "px";
     });
 
-    el.addEventListener("mouseleave", () => {
-        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+    document.querySelectorAll("a, button, .project-card").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+            cursor.style.transform = "translate(-50%, -50%) scale(1.5)";
+        });
+
+        el.addEventListener("mouseleave", () => {
+            cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        });
     });
-});
+}
 // LOADER HIDE
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
+// SAFE LOADER (WORKS ON MOBILE + DESKTOP)
 
-    setTimeout(() => {
+const hideLoader = () => {
+    const loader = document.getElementById("loader");
+    if (loader) {
         loader.style.opacity = "0";
         loader.style.transition = "0.5s";
 
         setTimeout(() => {
             loader.style.display = "none";
         }, 500);
-    }, 1000); // delay (you can reduce)
-});
+    }
+};
+
+// normal load
+window.addEventListener("load", hideLoader);
+
+// faster fallback
+document.addEventListener("DOMContentLoaded", hideLoader);
+
+// final fallback (guaranteed)
+setTimeout(hideLoader, 2000);
