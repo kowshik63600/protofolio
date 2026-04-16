@@ -353,8 +353,10 @@ footer a:hover {
     left: -100px;
     opacity: 0.3;
     pointer-events: none;
-    z-index: -1; /* 🔥 IMPORTANT */
+    z-index: -1;
+    /* 🔥 IMPORTANT */
 }
+
 .hero-text,
 .hero-buttons {
     position: relative;
